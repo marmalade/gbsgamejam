@@ -1,0 +1,36 @@
+CIwMaterial
+{
+    name "cube/lambert13"
+    colDiffuse {1.000000,1.000000,1.000000,0.800000}
+    texture0 "./textures/MindcandyCube_Top.png"
+}
+CIwMaterial
+{
+    name "cube/lambert8"
+    colDiffuse {1.000000,1.000000,1.000000,0.800000}
+    texture0 "./textures/MindcandyCube_Cross.png"
+}
+CIwMaterial
+{
+    name "cube/lambert12"
+    colDiffuse {1.000000,1.000000,1.000000,0.800000}
+    texture0 "./textures/MindcandyCube_Top_Branded.png"
+}
+CIwMaterial
+{
+    name "cube/lambert11"
+    colDiffuse {1.000000,1.000000,1.000000,0.800000}
+    texture0 "./textures/MindcandyCube_Circle.png"
+}
+CIwMaterial
+{
+    name "cube/lambert10"
+    colDiffuse {1.000000,1.000000,1.000000,0.800000}
+    texture0 "./textures/MindcandyCube_Star.png"
+}
+CIwMaterial
+{
+    name "cube/lambert9"
+    colDiffuse {1.000000,1.000000,1.000000,0.800000}
+    texture0 "./textures/MindcandyCube_Tri.png"
+}

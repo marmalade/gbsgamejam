@@ -1,0 +1,7 @@
+CIwResGroup
+{
+	name	"Example"
+
+	// Load a single GEOM file, which implicitly loads an accompanying MTL file, which implicitly loads required textures
+	"./Test01.geo"
+}

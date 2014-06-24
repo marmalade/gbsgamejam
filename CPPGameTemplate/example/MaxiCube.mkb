@@ -1,0 +1,38 @@
+#!/usr/bin/env mkb
+
+subprojects
+{
+    engine
+}
+
+files
+{
+    [Source]
+    (source)
+    Main.cpp
+    MyActor.cpp
+    MyActor.h
+    MyWorld.cpp
+    MyWorld.h
+    Resources.cpp
+    Resources.h
+
+    [Data]
+    (data)
+    board.group
+    cube.group
+}
+
+assets
+{
+    (data)
+    turn.wav
+    Serif.ttf
+    end_round.mp3
+    game_over.mp3
+
+    (data-ram/data-gles1, data)
+    board.group.bin
+    cube.group.bin
+}
+

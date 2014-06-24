@@ -1,0 +1,6 @@
+// Source file: board.fbx
+CIwResGroup
+{
+    name "board"
+    "./models/board.geo"
+}

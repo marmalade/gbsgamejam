@@ -1,0 +1,42 @@
+#!/usr/bin/env mkb
+options
+{
+#    module_path="modules"
+}
+
+defines
+{
+    IW_GXFONT_TTF
+}
+
+subprojects
+{
+    iwgx
+    iwgraphics
+    iwgxfont
+    SoundEngine
+}
+
+includepath
+{
+    .
+}
+
+files
+{
+    Actor.cpp
+    Actor.h
+    Audio.cpp
+    Audio.h
+    Graphics.cpp
+    Graphics.h
+    Input.cpp
+    Input.h
+    Label.cpp
+    Label.h
+    Timers.cpp
+    Timers.h
+    World.cpp
+    World.h
+}
+

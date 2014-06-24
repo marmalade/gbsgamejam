@@ -1,0 +1,6 @@
+// Source file: cube.fbx
+CIwResGroup
+{
+    name "cube"
+    "./models/cube.geo"
+}

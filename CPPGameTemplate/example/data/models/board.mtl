@@ -1,0 +1,24 @@
+CIwMaterial
+{
+    name "board/lambert3"
+    colDiffuse {1.000000,1.000000,1.000000,0.800000}
+    texture0 "./textures/board_square_light.png"
+}
+CIwMaterial
+{
+    name "board/lambert2"
+    colDiffuse {1.000000,1.000000,1.000000,0.800000}
+    texture0 "./textures/board_square_dark.png"
+}
+CIwMaterial
+{
+    name "board/lambert8"
+    colDiffuse {1.000000,1.000000,1.000000,0.800000}
+    texture0 "./textures/MindcandyCube_Cross.png"
+}
+CIwMaterial
+{
+    name "board/lambert6"
+    colDiffuse {1.000000,1.000000,1.000000,0.800000}
+    texture0 "./textures/board_edge.png"
+}
