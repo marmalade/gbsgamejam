@@ -1,2 +1,2 @@
-../../tools/FbxConverter board.fbx board.group
-../../tools/FbxConverter cube.fbx cube.group
+../../tools/Mac/FbxConverter board.fbx board.group
+../../tools/Mac/FbxConverter cube.fbx cube.group

@@ -1,2 +1,2 @@
-..\..\tools\FbxConverter board.fbx board.group
-..\..\tools\FbxConverter cube.fbx cube.group
+..\..\tools\Windows\FbxConverter board.fbx board.group
+..\..\tools\Windows\FbxConverter cube.fbx cube.group
