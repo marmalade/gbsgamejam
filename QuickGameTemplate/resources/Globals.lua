@@ -3,7 +3,7 @@
 
 showDebugTouchArea = false
 
-require("mobdebug").start() -- Uncomment for ZeroBrain IDE debuger support
+--require("mobdebug").start() -- Uncomment for ZeroBrain IDE debuger support
 
 ----------------------------------------------------------------------
 

@@ -6,15 +6,18 @@ This is a template project to help you get started building a Quick game. It is 
 but compact game, demonstrating essential functionality an and designed to be easily used
 as a starting point for your own game projects.
 
-The game is called "Condensation"
+The game is called "Condensation!"
+
+Currently only the menu and data save/load part of the game is implemented.
 
 **Features demonstrated**
 
 Files:
   main.lua
-  gamescene.lua
-  menuscene.lua
-  Utility classes, inc VirtualResolution from http://github.com/nickchops
+  SceneGame.lua
+  SceneMainMenu.lua
+  Globals.lua  - Easy access global values
+  helpers/...  - Utility classes, inc VirtualResolution from http://github.com/nickchops
 
 2 scenes: game and menu
 Each demonstrates:
@@ -29,17 +32,19 @@ main.lua:
 - Set's smart virtual resolution with user coords space set to iPhone 4 res
 
 Menu scene:
-- an origin node to allow for easily move things around
+- using nodes for subtrees to allow for easily moving things around the scene
 - a background png
-- buttons: start, music, exit - white sprites with colours applied and child text labels
-- music button turns music on/off
+- buttons: start, high scores, sound on/off, exit - white sprites with colours applied and
+  child text labels
+- sound button turns music on/off
 - play some music in background on loop
-- atable storing scores and player info
-- function to save/load scores to file
-- a label showing high scores
+- a table storing scores and player info
+- functions to save/load scores to file
+- a high scores screen with
+- enable/disable touch listeners
+- tween animations with onComplete for button presses and switching menu
 - suspend/resume
 - use a transition when switching to game scene
-- tweens with onComplete for button presses
 
 Game scene:
 - an origin node, background png and label to show score

@@ -242,8 +242,8 @@ function touchScores(self, event)
     if event.phase == "ended" then
         disableMainMenu()
         tween:to(sceneMainMenu.btns.scores, {xScale=btnScale*0.8, yScale=btnScale*0.8, time=0.2})
-        tween:to(sceneMainMenu.btns.scores, {xScale=btnScale, yScale=btnScale, time=0.2, delay=0.2, onComplete=menuDisplayHighScores})
-        tween:to(sceneMainMenu.mainMenu, {x=menuScreenMinX-300, time=0.5, delay=0.3})
+        tween:to(sceneMainMenu.btns.scores, {xScale=btnScale, yScale=btnScale, time=0.2, delay=0.2})
+        tween:to(sceneMainMenu.mainMenu, {x=menuScreenMinX-300, time=0.5, delay=0.3, onComplete=menuDisplayHighScores})
     end
 end
 

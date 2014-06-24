@@ -1,6 +1,6 @@
 [S3E]
 # Add any settings here
-DispFixRot=FixedLandscape
+DispFixRot=FixedPortrait
 
 MemSize=60000000
 MemSizeDebug=200000000
