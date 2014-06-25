@@ -32,9 +32,9 @@ class Actor;
  * Its generally best to derive your own world object from World and implement the Init(), Release(), Update() and Render() methods. These 
  * methods should provide the following functionality
  * - Init() - Initialise the world
- * - Release() - Release and cleanup the world (automatically releases all actors that were added to the world)
- * - Update() - Perfoms per game frame update (Also updates all actors that were added to the world)
- * - Render() - Perfoms per game frame rendernig (Also renders all actors that were added to the world)
+ * - Release() - Release and clean-up the world (automatically releases all actors that were added to the world)
+ * - Update() - Performs per game frame update (Also updates all actors that were added to the world)
+ * - Render() - Performs per game frame rendering (Also renders all actors that were added to the world)
  *
  * A world contains a list of game objects (actors). Below shows an example of how to create and add an actor to the world:
  *
@@ -59,7 +59,7 @@ protected:
     float				Perspective;		// Perspective multiplier
     bool				TransformDirty;		// Transform dirty flag
     CIwFVec3			TouchRay;			// A ray that points to view plane from camera
-    Actor*				TouchedActor;		// Acor that was last touched
+    Actor*				TouchedActor;		// Actor that was last touched
 
 public:
     World();

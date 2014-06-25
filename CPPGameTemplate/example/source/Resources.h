@@ -32,7 +32,7 @@ public:
     CIwModel*		Board;		// Game board model
     CIwModel*		Cube;		// Game cube model
 
-    CIwGxFont*      Font;       // Fnot used to render text
+    CIwGxFont*      Font;       // Font used to render text
 };
 
 extern Resources*   g_pResources;

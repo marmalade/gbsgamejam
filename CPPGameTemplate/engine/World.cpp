@@ -101,7 +101,7 @@ void World::Render()
     // Set view transform
     IwGxSetViewMatrix(&ViewTransform);
 
-    // Set pesepctive multiplier
+    // Set perspective multiplier
     IwGxSetPerspMul(Perspective);
 
     // Set far and near z clipping planes

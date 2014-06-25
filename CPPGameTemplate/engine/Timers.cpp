@@ -1,16 +1,15 @@
-// 
-//
-// AppEasy SDK - Cross Platform Multi-purpose Game and App Engine
-//
-// Developed by Matthew Hopwood of Pocketeers Limited - www.pocketeers.co.uk
-//
-// For updates, tutorials and more details check out www.appeasymobile.com
-//
-// This code is provided free of charge and without any warranty whatsoever. You must ensure that this whole notice is present in all files and derivatives, so the reader knows its origin.
-// If you use this SDK in your product then please ensure that you credit AppEasy's usage appropriately. Please see www.appeasymobile.com for licensing details and support
-//
-//
-
+/*
+ * (C) 2001-2012 Marmalade. All Rights Reserved.
+ *
+ * This document is protected by copyright, and contains information
+ * proprietary to Marmalade.
+ *
+ * This file consists of source code released by Marmalade under
+ * the terms of the accompanying End User License Agreement (EULA).
+ * Please do not use this program/source code before you have read the
+ * EULA and have agreed to be bound by its terms.
+ */
+ 
 #include "Timers.h"
 
 uint64 Timer::getDuration() const				{ return Duration; }

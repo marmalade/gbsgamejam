@@ -33,7 +33,7 @@
  *        g_pGraphics->Update();
  *    }
  *
- *    // Cleanup
+ *    // Clean-up
  *    delete g_pGraphics;
  * @endcode
  */
@@ -54,7 +54,7 @@ public:
     /**
      * @fn    void Graphics::PostRender()
      *
-     * @brief Performs post rendering tasks such as flushing the graphics engine and swappnig display buffers
+     * @brief Performs post rendering tasks such as flushing the graphics engine and swapping display buffers
      */
     void	PostRender();
 

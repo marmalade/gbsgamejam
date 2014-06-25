@@ -31,8 +31,8 @@ protected:
     CIwGxFont*			Font;		// Font used to render text
     std::string			Text;		// Text to display
     CIwColour			Colour;		// Colour text
-    IwGxFontAlignHor	AlignH;		// Horizontal aligment of text
-    IwGxFontAlignVer	AlignV;		// vertical aligment of text
+    IwGxFontAlignHor	AlignH;		// Horizontal alignment of text
+    IwGxFontAlignVer	AlignV;		// vertical alignment of text
 public:
     Label();
 

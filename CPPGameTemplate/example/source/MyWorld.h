@@ -40,18 +40,18 @@ protected:
     eGameState		GameState;			// Current game state
     Label*			TurnsLeftLabel;		// Label used to display TURNS LEFT text
     int				TurnsLeft;			// Number of turns left
-    bool			TurnsLeftChanged;	// Changs to true when turns left have changed (causes value label to be recalculated and updated)
+    bool			TurnsLeftChanged;	// Changes to true when turns left have changed (causes value label to be recalculated and updated)
     Label*			RoundLabel;			// Label used to display ROUND text
     int				Round;				// Number of rounds left
-    bool			RoundChanged;		// Changs to true when rounds left have changed (causes value label to be recalculated and updated)
-    Label*          GameOverLabel;		// Game over lebel (appears in centre of screen when player runs out of turns)
+    bool			RoundChanged;		// Changes to true when rounds left have changed (causes value label to be recalculated and updated)
+    Label*          GameOverLabel;		// Game over label (appears in centre of screen when player runs out of turns)
     int*			GameGrid;			// An array that contains the game grid
     int				GameGridWidth;		// The width of the game grid
     int				GameGridHeight;		// The height of the game grid
     int             ChosenSymbol;       // The symbol that the user should pick to win the game
     Timer			GameOverTimer;		// Timer used to reset the game after player loses
     bool			CamSwing;			// If true then camera swing is in operation
-    CIwFVec3        StartCamSwingPos;   // Camerqa swing position to statr from
+    CIwFVec3        StartCamSwingPos;   // Camera swing position to start from
     CIwFVec3        FinalCamSwingPos;   // Final resting position of camera
     float           CamSwingTime;       // Time since swing started
 

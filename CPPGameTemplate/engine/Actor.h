@@ -31,7 +31,7 @@ class World;
  * - 3D Position, Scale and Rotation
  * - A 3D model to represent the actor visually
  * - A collision sphere that is used by the World system to determine if the actor has been touched
- * - Visible property that dertermien if the actor is visible
+ * - Visible property that determines if the actor is visible
  * - Touchable property that determines if the actor can receive touch events
  */
 class Actor
@@ -99,7 +99,7 @@ public:
     bool            isVisible() const;
     bool            isTouchable() const;
 
-    // Event hnandlers
+    // Event handlers
     virtual void    Event_BeginTouch() {}
     virtual void    Event_EndTouch() {}
 };

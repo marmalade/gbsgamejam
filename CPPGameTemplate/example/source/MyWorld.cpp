@@ -321,7 +321,7 @@ void MyWorld::CalculateLeastTurnsNeeded()
         }
     }
 
-    // Choose symbol based on least number of turns neded to fill board with that symbol
+    // Choose symbol based on least number of turns needed to fill board with that symbol
     TurnsLeft = turns[0];
     TurnsLeftChanged = true;
     for (int symbol = 1; symbol < MAX_CUBE_SYMBOLS; symbol++)

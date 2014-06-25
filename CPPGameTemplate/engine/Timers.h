@@ -51,8 +51,8 @@ private:
 public:
     void		setDuration(uint64 millseconds_duration, bool start = true);		///< Sets the duration of the timer
     uint64		getDuration() const;												///< Gets the duration of the timer
-    void		setAutoReset(bool auto_reset);										///< If true the timer will aito restart once it times out
-    bool		getAutoReset() const;												///< Returns auto resset status
+    void		setAutoReset(bool auto_reset);										///< If true the timer will auto restart once it times out
+    bool		getAutoReset() const;												///< Returns auto reset status
     bool		hasStarted() const;													///< Returns true if the timer has started
     bool		hasStopped() const;													///< Returns true if the timer has stopped
     // Properties end
