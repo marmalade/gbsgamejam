@@ -14,7 +14,7 @@ Getting started with Marmalade
 Getting help
 ------------
 * Marmalade documentation is available here: http://docs.madewithmarmalade.com
-* Marmalade will be on site during the Game Jam is you need any help or advice. 
+* Marmalade will be on site during the Game Jam if you need any help or advice. 
 * If you can't find one of the Marmalade team then you can also reach us on Skype: marmalade.gamejam
 
 Quick Example/Template Game
