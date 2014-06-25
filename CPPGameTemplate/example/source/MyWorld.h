@@ -18,6 +18,7 @@
 
 #define MAX_CUBE_SYMBOLS	4
 #define CUBE_SIZE	10
+#define	CAM_SWING_TIME		50
 
 class Label;
 
@@ -49,6 +50,10 @@ protected:
     int				GameGridHeight;		// The height of the game grid
     int             ChosenSymbol;       // The symbol that the user should pick to win the game
     Timer			GameOverTimer;		// Timer used to reset the game after player loses
+    bool			CamSwing;			// If true then camera swing is in operation
+    CIwFVec3        StartCamSwingPos;   // Camerqa swing position to statr from
+    CIwFVec3        FinalCamSwingPos;   // Final resting position of camera
+    float           CamSwingTime;       // Time since swing started
 
 public:
     MyWorld();

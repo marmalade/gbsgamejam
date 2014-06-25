@@ -16,7 +16,8 @@
 #include "MyWorld.h"
 #include "MyActor.h"
 
-MyWorld::MyWorld() : World(), GameGrid(0), GameGridWidth(6), GameGridHeight(6), GameState(eGameState_Running)
+MyWorld::MyWorld() : World(), GameGrid(0), GameGridWidth(6), GameGridHeight(6), GameState(eGameState_Running), 
+   CamSwing(true), StartCamSwingPos(100,20,-100), CamSwingTime(0), FinalCamSwingPos(0, 70, -5)
 {
 }
 
@@ -124,7 +125,23 @@ void MyWorld::Update()
 {
     // Adjust perspective based on dimensions of screen to keep board in view
     int max = IwGxGetScreenHeight() > IwGxGetScreenWidth() ? IwGxGetScreenHeight() : IwGxGetScreenWidth();
-    setPerspective(500.0f - (1024 - max) / 2);
+    setPerspective(480.0f - (1024 - max) / 2);
+
+    // Update camera swing
+    if (CamSwing)
+    {
+        float d = CamSwingTime / CAM_SWING_TIME;
+        LookFrom.x = StartCamSwingPos.x + (FinalCamSwingPos.x - StartCamSwingPos.x) * d;
+        LookFrom.y = StartCamSwingPos.y + (FinalCamSwingPos.y - StartCamSwingPos.y) * d;
+        LookFrom.z = StartCamSwingPos.z + (FinalCamSwingPos.z - StartCamSwingPos.z) * d;
+        TransformDirty = true;
+        CamSwingTime++;
+        if (CamSwingTime > CAM_SWING_TIME)
+        {
+            CamSwing = false;
+            CamSwingTime = 0;
+        }
+    }
 
     // TODO: Add world logic here
     World::Update();
@@ -216,9 +233,10 @@ void MyWorld::RestartGame()
 void MyWorld::NextRound()
 {
     // Go to next round
-    Round = Round + 1;
+    Round++;
     RoundChanged = true;
     RegenerateGameGrid();
+    CamSwing = true;
 }
 
 void MyWorld::TakenTurn()
@@ -265,7 +283,6 @@ void MyWorld::RegenerateGameGrid(bool reset)
     for (int t = 0; t < GameGridWidth * GameGridHeight; t++)
     {
         GameGrid[t] = (int)(((float)rand() * MAX_CUBE_SYMBOLS) / RAND_MAX);
-        printf("%d: %d, %d\n", t, GameGrid[t]);
     }
 
     // Calculate how many moves it would take to fill the entire grid with same symbol
@@ -302,7 +319,6 @@ void MyWorld::CalculateLeastTurnsNeeded()
             else
                 turns[symbol] += MAX_CUBE_SYMBOLS - (sym - symbol + MAX_CUBE_SYMBOLS);
         }
-        printf("Symbol %d: Turns needed to fill board withj this symbol %d\n", symbol, turns[symbol]);
     }
 
     // Choose symbol based on least number of turns neded to fill board with that symbol

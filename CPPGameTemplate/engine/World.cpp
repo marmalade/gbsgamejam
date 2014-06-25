@@ -135,6 +135,12 @@ void World::AddActor(Actor* actor)
     actor->setParent(this);
 }
 
+void World::RemoveActor(Actor* actor)
+{
+    Actors.remove(actor);
+    actor->setParent(0);
+}
+
 void World::setFarNearZ(float far_z, float near_z)
 {
     FarZ = far_z;

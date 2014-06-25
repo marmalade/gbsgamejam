@@ -102,6 +102,15 @@ public:
      */
     void AddActor(Actor* actor);
 
+    /**
+     * @fn    void World::RemoveActor()
+     *
+     * @brief Removes an actor from the world
+     *
+     * @param actor Actor to remove
+     */
+    void RemoveActor(Actor* actor);
+
     // Getters / setters
     void	setCamera(const CIwFVec3& from, const CIwFVec3& to, const CIwFVec3& up);
     void	setFarNearZ(float far_z, float near_z);
