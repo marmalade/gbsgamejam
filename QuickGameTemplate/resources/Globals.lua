@@ -5,7 +5,7 @@ showDebugTouchArea = false
 
 --require("mobdebug").start() -- Uncomment for ZeroBrain IDE debuger support
 
-----------------------------------------------------------------------
+-------------------------------------------------------------------
 
 require("helpers/Utility")
 

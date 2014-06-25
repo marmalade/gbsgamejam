@@ -1,8 +1,6 @@
 
 require("helpers/Utility")
 require("helpers/NodeUtility")
---dofile("helpers/OnScreenDPad.lua")
---dofile("helpers/OnScreenButton.lua")
 
 -- These are user space coords for screen edges that will inc letterbox areas
 -- that VirtualResolution has created
@@ -22,16 +20,13 @@ local btnW = 400
 local btnH
 local btnScale
 
------------------------------------------------------------
-
-
 --------------------------------------------------------
-    
+
 function sceneMainMenu:startup()
     if gameInfo.soundOn then
         audio:playStreamWithLoop(titleMusic, true)
     end
-    
+
     if not startupFlag then
         tween:from(self.mainMenu, {y=menuScreenMinY-100, time=0.5, onComplete=enableMainMenu})
     else
@@ -41,16 +36,16 @@ end
 
 function sceneMainMenu:setUp(event)
     dbg.print("sceneMainMenu:setUp")
-    
+
     system:addEventListener({"suspend", "resume", "update"}, self)
-    
+
     -- turn scaling on for the scene
     virtualResolution:applyToScene(self)
-    
+
     -- loads scores, last user name and achievements from local storage
     -- You probably want to integrate these with online services...
     if not startupFlag then loadUserData() end
-    
+
     self.background = director:createSprite(0, 0, "textures/sky.png")
     -- sprites are scaled to file size by default. need to use xScale/yScale
     -- to change size, not w and h.
@@ -58,7 +53,7 @@ function sceneMainMenu:setUp(event)
     self.background.defaultScale = appWidth/self.background.w
     self.background.xScale = self.background.defaultScale
     self.background.yScale = self.background.defaultScale
-    
+
     self.mainMenu = director:createNode({x=appWidth/2,y=appHeight-150})
     self.mainMenu.titleOutline = director:createLines({x=0, y=0, coords={-200,-50, -200,50, 200,50, 200,-50, -200,-50},
             strokeWidth=4, strokeColor=titleCol, alpha=0})
@@ -66,35 +61,35 @@ function sceneMainMenu:setUp(event)
     self.mainMenu.titleText = director:createLabel({x=-160, y=-25, w=400, h=100,
             hAlignment="left", vAlignment="bottom", text="CONDENSATION!", color=titleCol, font=fontMain, xScale=2, yScale=2})
     self.mainMenu:addChild(self.mainMenu.titleText)
-    
-    -- main menu buttons    
+
+    -- main menu buttons
     self.btns = {}
     local btnY = -200
-    
+
     sceneMainMenu:addButton("start", "Start Game", btnY, touchStart, 70)
-    
+
     btnY = btnY - 150
     sceneMainMenu:addButton("scores", "High Scores", btnY, touchScores, 55)
-    
+
     btnY = btnY - 150
     sceneMainMenu:addButton("sound", "Sound: on", btnY, touchSound, 95)
-    
+
     if not gameInfo.soundOn then
         self.btns.sound.alpha = 0.5
         self.btns.sound.label.text = "Sound: off"
     end
-    
+
     if useQuitButton then
         btnY = btnY - 150
         sceneMainMenu:addButton("quit", "Quit", btnY, touchQuit, 150)
     end
-    
+
     -- score labels
     -- currently just show score and high scroe from last mode played. May want to show multiple modes.
     -- maybe have then on a rolling anim switching between modes
     self.labelScore = director:createLabel({x=appWidth-170, y=appHeight-35, w=190, h=50, xAnchor=0, yAnchor=0, hAlignment="left", vAlignment="bottom", text="SCORE    " .. gameInfo.score, color=titleCol, font=fontMainTitle})
     self.labelHighScore = director:createLabel({x=appWidth-169, y=appHeight-50, w=250, h=50, xAnchor=0, yAnchor=0, hAlignment="left", vAlignment="bottom", text="HIGH SCORE     " .. gameInfo.scores[1].score, xScale=0.6, yScale=0.6, color=textCol, font=fontMain})
-    
+
 
     --if gameInfo.newHighScore then
     --    do different logic for displaying high score screen here
@@ -105,7 +100,7 @@ function sceneMainMenu:setUp(event)
              startupFlag = true
          end
     --end
-    
+
     -- Each "start" call may push data to flurry's server. Data is sent on
     -- start/pause/resume/exit dependign on platform - good to try to force
     -- push on re-entering menu.
@@ -125,22 +120,22 @@ function sceneMainMenu:exitPostTransition(event)
     -- warning: using destroyNodesInTree(self,false) will destroy the node that does VirtualResolution!
     -- The VR system can't cope with that unless you do virtualResolution:releaseScene()
     -- It's better for debugging to just destroy in parts anyway. TODO: update destroyNodesInTree to understand VR.
-    
+
     destroyNodesInTree(self.mainMenu, true)
     self.mainMenu = nil
     self.btns = nil
-    
+
     self.background:removeFromParent()
     self.background = nil
     self.labelScore:removeFromParent()
     self.labelScore = nil
     self.labelHighScore:removeFromParent()
     self.labelHighScore = nil
-    
+
     self:releaseResources()
     collectgarbage("collect")
     director:cleanupTextures()
-    
+
     dbg.print("sceneMainMenu:exitPostTransition done")
 end
 
@@ -151,13 +146,13 @@ sceneMainMenu:addEventListener({"setUp", "enterPostTransition", "exitPreTransiti
 
 function sceneMainMenu:addButton(name, text, btnY, touchListener, textX)
     self.btns[name] = director:createSprite({x=0, y=btnY, xAnchor=0.5, yAnchor=0.5, source=btnTexture, color=btnCol}) --can apply colours to textures
-    
+
     -- these two are re-used throughout rest of file
     if not btnScale then
         btnScale = btnW/self.btns.start.w
         btnH = self.btns.start.h * btnScale
     end
-    
+
     self.btns[name].xScale = btnScale
     self.btns[name].yScale = btnScale
     self.btns[name].defaultScale = btnScale
@@ -166,7 +161,7 @@ function sceneMainMenu:addButton(name, text, btnY, touchListener, textX)
     self.btns[name]:addChild(self.btns[name].label)
     --NB: font scale is applied after x/yAnchor ofset so  using those makes it very hard!
     --For text, better to use left/bottom and position manually.
-    
+
     self.btns[name].touch = touchListener -- now need to actually register the button's touch listener as itself for this to work
 end
 
@@ -291,8 +286,8 @@ function touchRate(self, event)
     end
 end
 
--- Very simple go-to-URL implementation for social features.
--- Prob want to replace with facebook and twitter APIs...
+-- Example very simple go-to-URL implementation for social features.
+-- Prob want to replace with rich facebook and twitter APIs, but a good temp solution...
 
 function touchFacebook(self, event)
     if event.phase == "ended" then
@@ -317,16 +312,16 @@ function menuDisplayHighScores(target)
     sceneMainMenu.scoreLabels.title = director:createLabel({x=0, y=0, w=250, h=50, xAnchor=0.5, xScale=2, yScale=2,
             yAnchor=0.5, hAlignment="center", vAlignment="bottom", text="HIGH SCORES", color=titleCol, font=fontMainTitle})
     sceneMainMenu.scoreLabels:addChild(sceneMainMenu.scoreLabels.title)
-    
+
     local labelY=-120
-    
+
     for k,v in ipairs(gameInfo.scores) do
         local scoreText = gameInfo.scores[k].name .. "  " .. string.format("%08d", gameInfo.scores[k].score)
         sceneMainMenu.scoreLabels[k] = director:createLabel({x=0, y=labelY, w=250, h=30, xAnchor=0.5, yAnchor=0.5, hAlignment="center", vAlignment="bottom", text=scoreText, color=textCol, font=fontMain})
         labelY=labelY-50
         sceneMainMenu.scoreLabels:addChild(sceneMainMenu.scoreLabels[k])
     end
-    
+
     --animate moving onto screeen and show back button when done
     tween:to(sceneMainMenu.scoreLabels, {time=0.5, x=appWidth/2, onComplete=menuHighScoresShown})
 end
@@ -340,7 +335,7 @@ function menuCloseHighScores(event)
         destroyNodesInTree(sceneMainMenu.scoreLabels, true)
         sceneMainMenu.scoreLabels = nil
         sceneMainMenu:removeBackButton(menuCloseHighScores)
-        
+
         tween:to(sceneMainMenu.mainMenu, {x=appWidth/2, time=0.5, onComplete=enableMainMenu})
     end
 end
@@ -361,13 +356,13 @@ end
 function sceneMainMenu:addBackButton(listener)
     sceneMainMenu.backKeyListener = listener
     system:addEventListener("key", menuBackKeyListener) -- allow key to press button
-    
+
     self.backBtn = director:createSprite({x=appWidth/2, y=115, xAnchor=0.5, yAnchor=0.5, source=btnTexture, color=btnCol})
     self.backBtn.xScale = btnScale
     self.backBtn.yScale = btnScale
-    
+
     self.backBtn:addChild(director:createLines({x=btnW/2, y=btnH/2, coords={-15,20, -35,0, -15,-20, -15,-10, 35,-10, 35,10, -15,10, -15,20}, strokeColor=textCol, alpha=0, strokeWidth=5}))
-    
+
     self.backBtn:addEventListener("touch", listener)
     tween:to(self.backBtn, {xScale=btnScale*1.1, yScale=btnScale*1.1, time=1.0, mode="mirror"})
 end
@@ -377,9 +372,9 @@ function sceneMainMenu:removeBackButton(listener)
         dbg.print("Tried to remove non existant back button")
         return
     end
-    
+
     system:removeEventListener("key", menuBackKeyListener)
-    
+
     self.backBtn:removeEventListener("touch", listener)
     destroyNodesInTree(self.backBtn, true)
     self.backBtn = nil
@@ -398,7 +393,7 @@ function saveUserData(clearHighScoreFlag)
         file:close()
         dbg.print("game data saved")
     end
-    
+
     if clearHighScoreFlag then
         gameInfo.newHighScore = nil
     end
@@ -423,11 +418,11 @@ function checkNewHighScoreAndSave()
             break
         end
     end
-    
+
     if gameInfo.newHighScore then
         saveUserData()
     end
-    
+
     return gameInfo.newHighScore -- allow quick checking if a score was set
 end
 
@@ -449,23 +444,4 @@ function loadUserData()
         file:close()
         dbg.print("game data loaded")
     end
-    
-    -- do "if nil then create" for all values so game can be updated and new settings get
-    -- initialised when save games already exist
-    if not gameInfo.highScore then
-        gameInfo.highScore = {waves={}, survival={}, streak={}}
-        local names = {"NIC", "MAR", "MAL", "ADE", "PAC", "JNR", "CRS", "I3D", "MRK", "FFS"}
-        for k,v in pairs(gameInfo.highScore) do
-            for n=1, 10 do
-                local score = (11-n)*20 --20->200
-                if k == "survival" then score = score/4 end --5->50
-                if k == "streak" then score = score/2-50 end --10->50
-                if score < 0 then score=0 end
-                v[n] = {name=names[n], score=score}
-                if score == 0 then v[n].name="XXX" end
-            end
-        end
-    end
-    
-    if not gameInfo.name then gameInfo.name = "_P1" end --records last name entered to save re-entering
 end
