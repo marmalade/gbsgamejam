@@ -12,7 +12,7 @@ Getting started with Marmalade
 * On OS X you will need Xcode 5.0 or greater.  You can download this from the [App Store](https://itunes.apple.com/gb/app/xcode/id497799835?mt=12).
 * On Windows you will need Visual Studio. We recommend Visual Studio Express 2010 which can be downloaded [here](http://go.microsoft.com/?linkid=9709949), however any version of Visual Studio 2008-2012 is compatible with Marmalade.
 
-Getting help
+Getting Help
 ------------
 * Marmalade documentation is available [here](http://docs.madewithmarmalade.com).
 * Marmalade will be on site during the Game Jam if you need any help or advice.
