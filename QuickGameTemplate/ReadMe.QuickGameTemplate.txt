@@ -57,3 +57,8 @@ Game scene:
 - implement touch that uses both node and system listers to implement dragging well
 - play sound effects on collecting or missing objects
 - pause-resume everything on app suspend/resume
+
+WARNING:
+- if you get an error regarding s3eMemoryDebug, this is a known issue. Simple press ignore all 
+  carry on! It is recommended to start with a brand new project using this and the other game 
+  example as a base to start from.
