@@ -60,5 +60,5 @@ Game scene:
 
 WARNING:
 - if you get an error regarding s3eMemoryDebug, this is a known issue. Simple press ignore all 
-  carry on! It is recommended to start with a brand new project using this and the other game 
+  and carry on! It is recommended to start with a brand new project using this and the other game 
   example as a base to start from.
