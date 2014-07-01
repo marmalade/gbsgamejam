@@ -14,7 +14,7 @@ FbxConverter will convert files exported by Maya LT to a format that the engine 
 with. Assets have been provided with the example game and shell scripts have been 
 provided that demonstrate how to convert your own assets
 
-Documentation for the engine and example has been provided in the docs folder.
+Documentation for the engine and example has been provided in the [docs folder](https://github.com/marmalade/gbsgamejam/tree/master/CPPGameTemplate/docs).
 
 **Features demonstrated**
 - How to convert 3D assets from FBX to Marmalade format
