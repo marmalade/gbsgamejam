@@ -6,8 +6,6 @@ This is a template project to help you get started building a Quick game. It is 
 but compact game, demonstrating essential functionality an and designed to be easily used
 as a starting point for your own game projects.
 
-The game is called "Condensation!"
-
 Currently only the menu and data save/load part of the game is implemented.
 
 **Features demonstrated**
@@ -47,16 +45,7 @@ Menu scene:
 - use a transition when switching to game scene
 
 Game scene:
-- an origin node, background png and label to show score
-- simple game with falling objects: use finger to move bucket to catch falling things.
-  miss an object = game over
-- physics
-- sprite loading
-- animate the objects hitting the bottom
-- display particles coming off falling objects
-- implement touch that uses both node and system listers to implement dragging well
-- play sound effects on collecting or missing objects
-- pause-resume everything on app suspend/resume
+- your game here :-)
 
 WARNING:
 - if you get an error regarding s3eMemoryDebug, this is a known issue. Simple press ignore all 
