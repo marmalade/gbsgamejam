@@ -9,7 +9,7 @@ without modifications to enable you to create 3D games out of the box.
 An example game has also been provided called MaxiCube, you can use this game as a 
 starting point for your own game or use it as a reference.
 
-Asset conversion tools for Mac and Windows have been provided in the tools folder. The 
+Asset conversion tools for Mac and Windows have been provided in the [tools folder](https://github.com/marmalade/gbsgamejam/tree/master/CPPGameTemplate/tools). The 
 FbxConverter will convert files exported by Maya LT to a format that the engine can work 
 with. Assets have been provided with the example game and shell scripts have been 
 provided that demonstrate how to convert your own assets
