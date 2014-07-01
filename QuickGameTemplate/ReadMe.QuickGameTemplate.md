@@ -5,17 +5,20 @@ Using Template: Marmalade Quick Project
 This is a template project to help you get started building a Quick game. It provides
 a skeleton implementation of a few scenes around which you can build your game.
 
+**Files**
+
+- main.lua
+- SceneGame.lua
+- SceneMainMenu.lua
+- Globals.lua  - Easy access global values
+- helpers/...  - Utility classes, inc VirtualResolution from http://github.com/nickchops
+
 **Features demonstrated**
 
-Files:
-  main.lua
-  SceneGame.lua
-  SceneMainMenu.lua
-  Globals.lua  - Easy access global values
-  helpers/...  - Utility classes, inc VirtualResolution from http://github.com/nickchops
+Two scenes: game and menu.
 
-2 scenes: game and menu
 Each demonstrates:
+
 - setup
 - teardown
 - pre and post transition for setup and teardown
@@ -23,10 +26,12 @@ Each demonstrates:
   management
 
 main.lua:
+
 - Includes utility classes
 - Set's smart virtual resolution with user coords space set to iPhone 4 res
 
 Menu scene:
+
 - using nodes for subtrees to allow for easily moving things around the scene
 - a background png
 - buttons: start, high scores, sound on/off, exit - white sprites with colours applied and
@@ -42,9 +47,11 @@ Menu scene:
 - use a transition when switching to game scene
 
 Game scene:
+
 - your game here :-)
 
 WARNING:
+
 - if you get an error regarding s3eMemoryDebug, this is a known issue. Simple press ignore all 
   and carry on! It is recommended to start with a brand new project using this and the other game 
   example as a base to start from.
