@@ -2,11 +2,8 @@ Created: Fri Jun 20 13:45:03 2014
 By: Nick Smith and Jamie Grossman
 Using Template: Marmalade Quick Project
 
-This is a template project to help you get started building a Quick game. It is a full
-but compact game, demonstrating essential functionality an and designed to be easily used
-as a starting point for your own game projects.
-
-Currently only the menu and data save/load part of the game is implemented.
+This is a template project to help you get started building a Quick game. It provides
+a skeleton implementation of a few scenes around which you can build your game.
 
 **Features demonstrated**
 
