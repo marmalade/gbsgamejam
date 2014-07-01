@@ -47,5 +47,5 @@ This is a small C++ game engine that you can use to create games that
 support 3D graphics, audio playback and touch input. A simple 3D game example that 
 utilises the engine is included. Documentation and conversion tools are also supplied.
 
-See the [C++ game engine readme](CPPGameTemplate/ReadMe.CPPGameTemplate.txt) for more
+See the [C++ game engine readme](CPPGameTemplate/ReadMe.CPPGameTemplate.md) for more
 info.
