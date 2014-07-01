@@ -23,11 +23,19 @@ Quick Example/Template Game
 
 [QuickGameTemplate](QuickGameTemplate/)
 
-This is a template project to help you get started building a Quick game. It is a full
+This is a template project to help you get started building a Quick game. It provides
+a skeleton implementation of a few scenes around which you can build your game.
+
+See the [Quick template readme](QuickGameTemplate/ReadMe.QuickGameTemplate.txt) for more
+info.
+
+[QuickGameExample](QuickGameExample/)
+
+This is a example project to help you get started building a Quick game. It is a full
 but compact game, demonstrating essential functionality and designed to be easily used
 as a starting point for your own game projects.
 
-See the [Quick template readme](QuickGameTemplate/ReadMe.QuickGameTemplate.txt) for more
+See the [Quick example readme](QuickGameExample/ReadMe.Condensation.txt) for more
 info.
 
 Mini C++ 3D Game Engine and Example
